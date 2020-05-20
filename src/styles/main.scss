@@ -1,0 +1,21 @@
+@import "common/variables";
+
+
+@import "bootstrap/scss/bootstrap";
+@import "font-awesome/scss/font-awesome";
+
+// Common
+@import "common/global";
+@import "common/mixins";
+@import "common/fonts";
+
+// Layouts
+@import "layouts/header";
+@import "layouts/sidebar";
+@import "layouts/footer";
+
+// Pages
+@import "pages/home";
+
+// Components
+@import "components/welcome";

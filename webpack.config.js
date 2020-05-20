@@ -9,7 +9,7 @@ module.exports = {
     },
     entry: {
         app: [
-            './src_client/index.js'
+            './src/scripts/index.js'
         ]
     },
     output: {
@@ -30,7 +30,7 @@ module.exports = {
                                 [
                                     '@babel/preset-env',
                                     {
-                                        'modules': 'false',//commonjs,amd,umd,systemjs,auto
+                                        'modules': false,
                                         'useBuiltIns': 'usage',
                                         'targets': '> 0.25%, not dead',
                                         'corejs': 3
