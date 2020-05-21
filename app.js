@@ -78,6 +78,8 @@ app.use(sass({
   includePaths: [path.join(__dirname), 'node_modules'],
 }));
 
+app.use('/public', express.static(path.join(__dirname, 'public')))
+
 // Sending static files with Express 
 app.use(logger('dev'));
 app.use(express.json());
