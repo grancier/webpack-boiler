@@ -3,8 +3,14 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const paths = require('./paths')
+const path = require("path");
+
+module.exports = function(_env, argv) {
+  
+};
 
 module.exports = {
+  
   // Where webpack looks to start building the bundle
   entry: [paths.src + '/index.js'],
 
@@ -47,8 +53,17 @@ module.exports = {
   // Determine how modules within the project are treated
   module: {
     rules: [
-      // JavaScript: Use Babel to transpile JavaScript files
-      { test: /\.js$/, use: ['babel-loader'] },
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: true,
+            cacheCompression: false
+          },
+        },
+      },
 
       // Images: Copy image files to build folder
       { test: /\.(?:ico|gif|png|jpg|jpeg)$/i, type: 'asset/resource' },
